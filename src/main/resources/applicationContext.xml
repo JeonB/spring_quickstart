@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--       <bean id="tv" class="polymorphism.SamsungTV" init-method="initMethod" destroy-method="destroyMethod" lazy-init="true" scope="singleton"></bean>-->
+       <bean id="tv" class="polymorphism.SamsungTV">
+<!--              <constructor-arg index="0" ref="apple"></constructor-arg>-->
+<!--              <constructor-arg index="1" value="2700000"></constructor-arg>-->
+              <property name="speaker" ref="apple"></property>
+              <property name="price" value="8798798"></property>
+       </bean>
+       <bean id="sony" class="polymorphism.SonySpeaker"></bean>
+       <bean id ="apple" class="polymorphism.AppleSpeaker"></bean>
+        <bean id="collectionBean" class="ioc.injection.CollectionBean">
+            <property name="addressList">
+                <list>
+                    <value> 서울시 강남구 일원동</value>
+                    <value> 서울시 강남구 개포동</value>
+                </list>
+            </property>
+        </bean>
+        <bean id ="tv" class="polymorphism.SamsungTV">
+            <property name="price" value="3000000"></property>
+            <property name="speaker" ref="apple"></property>
+        </bean>
+</beans>
