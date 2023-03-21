@@ -1,20 +1,27 @@
 package polymorphism;
 
-public class LgTV implements TV{
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component//따로 이름 지정 안 하면 클래스 이름의 첫 대문자를 소문자로 변경한 것이 이름임
+public class LgTV implements TV{
+    @Autowired //자동으로 SonySpeaker 객체를 speaker변수에 할당
     private Speaker speaker;
 
     private int price;
-
-    public void setPrice(int price) {
-        System.out.println("==> setPrice 호출`");
+    
+    public LgTV(){
+        System.out.println("===>LG tv 객체 생성");
+    }
+/*    public void setPrice(int price) {
+        System.out.println("==> setPrice 호출");
         this.price = price;
     }
 
     public void setSpeaker(Speaker speaker) {
         System.out.println("==> setSpeaker 호출");
         this.speaker = speaker;
-    }
+    }*/
     
 
     @Override
@@ -28,10 +35,10 @@ public class LgTV implements TV{
     }
     @Override
     public void soundUp(){
-        System.out.println("LgTV---소리 올린다.");
+        speaker.volumeUp();
     }
     @Override
     public void soundDown(){
-        System.out.println("LgTV---소리 내린다.");
+        speaker.volumeDown();
     }
 }

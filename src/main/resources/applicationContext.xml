@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-<!--       <bean id="tv" class="polymorphism.SamsungTV" init-method="initMethod" destroy-method="destroyMethod" lazy-init="true" scope="singleton"></bean>-->
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+    <context:component-scan base-package="polymorphism"/>
+<!--&lt;!&ndash;       <bean id="tv" class="polymorphism.SamsungTV" init-method="initMethod" destroy-method="destroyMethod" lazy-init="true" scope="singleton"></bean>&ndash;&gt;
        <bean id="tv" class="polymorphism.SamsungTV">
-<!--              <constructor-arg index="0" ref="apple"></constructor-arg>-->
-<!--              <constructor-arg index="1" value="2700000"></constructor-arg>-->
+&lt;!&ndash;              <constructor-arg index="0" ref="apple"></constructor-arg>&ndash;&gt;
+&lt;!&ndash;              <constructor-arg index="1" value="2700000"></constructor-arg>&ndash;&gt;
               <property name="speaker" ref="apple"></property>
               <property name="price" value="8798798"></property>
        </bean>
+       <bean id="tv2" class="polymorphism.LgTV">
+           <property name="speaker" ref="sony"></property> &lt;!&ndash;bean 객체 생성 동시에 setSpeaker메소드 호출 &ndash;&gt;
+           <property name="price" value="245000"></property>
+       </bean>
+       <bean id="tv3" class="polymorphism.SamsungTV" p:speaker-ref="apple" p:price="10000000"></bean>
+
        <bean id="sony" class="polymorphism.SonySpeaker"></bean>
        <bean id ="apple" class="polymorphism.AppleSpeaker"></bean>
         <bean id="collectionBean" class="ioc.injection.CollectionBean">
@@ -18,9 +26,5 @@
                     <value> 서울시 강남구 개포동</value>
                 </list>
             </property>
-        </bean>
-        <bean id ="tv" class="polymorphism.SamsungTV">
-            <property name="price" value="3000000"></property>
-            <property name="speaker" ref="apple"></property>
-        </bean>
+        </bean>-->
 </beans>
