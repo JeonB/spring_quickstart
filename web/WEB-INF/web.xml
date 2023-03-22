@@ -29,7 +29,7 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>hello</servlet-name>
-        <servlet-class>helloservlet.HelloServlet</servlet-class>
+        <servlet-class>day1.helloservlet.HelloServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>hello</servlet-name>

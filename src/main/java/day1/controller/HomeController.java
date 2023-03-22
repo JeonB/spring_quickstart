@@ -1,4 +1,4 @@
-package com.hihi.go.controller;
+package day1.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

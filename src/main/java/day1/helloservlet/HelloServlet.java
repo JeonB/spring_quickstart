@@ -1,4 +1,4 @@
-package helloservlet;
+package day1.helloservlet;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;

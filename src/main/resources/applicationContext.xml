@@ -3,7 +3,8 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
-    <context:component-scan base-package="polymorphism"/>
+    <context:component-scan base-package="day1.polymorphism"/>
+    <bean class="day1.polymorphism.AppleSpeaker"/>
 <!--&lt;!&ndash;       <bean id="tv" class="polymorphism.SamsungTV" init-method="initMethod" destroy-method="destroyMethod" lazy-init="true" scope="singleton"></bean>&ndash;&gt;
        <bean id="tv" class="polymorphism.SamsungTV">
 &lt;!&ndash;              <constructor-arg index="0" ref="apple"></constructor-arg>&ndash;&gt;

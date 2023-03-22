@@ -1,11 +1,11 @@
-package polymorphism;
+package day1.polymorphism;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Qualifier;
 
-@Component//따로 이름 지정 안 하면 클래스 이름의 첫 대문자를 소문자로 변경한 것이 이름임
 public class LgTV implements TV{
     @Autowired //자동으로 SonySpeaker 객체를 speaker변수에 할당
+    @Qualifier("apple")
     private Speaker speaker;
 
     private int price;

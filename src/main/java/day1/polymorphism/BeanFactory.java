@@ -1,4 +1,4 @@
-package polymorphism;
+package day1.polymorphism;
 
 public class BeanFactory {
     public Object getBean(String beanName){

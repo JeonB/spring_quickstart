@@ -1,4 +1,4 @@
-package ioc.injection;
+package day1.ioc_injection;
 
 import java.util.List;
 

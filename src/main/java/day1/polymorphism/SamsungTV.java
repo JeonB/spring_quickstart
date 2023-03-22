@@ -1,4 +1,4 @@
-package polymorphism;
+package day1.polymorphism;
 
 public class SamsungTV implements TV{
     private int price;

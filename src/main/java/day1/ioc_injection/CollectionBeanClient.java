@@ -1,4 +1,4 @@
-package ioc.injection;
+package day1.ioc_injection;
 
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
