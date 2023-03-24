@@ -2,9 +2,11 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
        xmlns:context="http://www.springframework.org/schema/context"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
     <context:component-scan base-package="day1.polymorphism"/>
-    <bean class="day1.polymorphism.AppleSpeaker"/>
+    <context:component-scan base-package="day2"/>
+<!--    <bean class="day1.polymorphism.AppleSpeaker"/>-->
 <!--&lt;!&ndash;       <bean id="tv" class="polymorphism.SamsungTV" init-method="initMethod" destroy-method="destroyMethod" lazy-init="true" scope="singleton"></bean>&ndash;&gt;
        <bean id="tv" class="polymorphism.SamsungTV">
 &lt;!&ndash;              <constructor-arg index="0" ref="apple"></constructor-arg>&ndash;&gt;
@@ -28,4 +30,16 @@
                 </list>
             </property>
         </bean>-->
+
+    <bean id="log" class="day2.common.LogAdvice"></bean>
+    <aop:config>
+        <aop:pointcut id="allPointcut"
+                      expression="execution(* day2..*Impl.*(..))" />
+        <aop:pointcut id="getPointcut"
+                      expression="execution(* day2..*Impl.get*(..))"/>
+
+        <aop:aspect ref="log">
+            <aop:after pointcut-ref="getPointcut" method="printLog" />
+        </aop:aspect>
+    </aop:config>
 </beans>
