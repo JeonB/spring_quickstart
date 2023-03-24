@@ -13,21 +13,18 @@ import java.util.List;
 // DAO(Data Access Object)
 @Repository("boardDAO")
 public class BoardDAO {
-	// JDBC ���� ����
 	private Connection conn = null;
 	private PreparedStatement stmt = null;
 	private ResultSet rs = null;
-	// SQL ��ɾ��
-	private final String BOARD_INSERT = "insert into board(seq, title, writer, content) values((select nvl(max(seq), 0)+1 from board),?,?,?)";
+	// SQL 문
+	private final String BOARD_INSERT = "insert into board(seq, title, writer, content) values((select COALESCE(max(seq), 0)+1 from board),?,?,?)";
 	private final String BOARD_UPDATE = "update board set title=?, content=? where seq=?";
 	private final String BOARD_DELETE = "delete board where seq=?";
 	private final String BOARD_GET = "select * from board where seq=?";
 	private final String BOARD_LIST = "select * from board order by seq desc";
 
-	// CRUD ����� �޼ҵ� ����
-	// �� ���
 	public void insertBoard(BoardVO vo) {
-		System.out.println("===> JDBC�� insertBoard() ��� ó��");
+		System.out.println("===> JDBC로 insertBoard() 기능 처리");
 		try {
 			conn = JDBCUtil.getConnection();
 			stmt = conn.prepareStatement(BOARD_INSERT);
@@ -42,9 +39,8 @@ public class BoardDAO {
 		}
 	}
 
-	// �� ����
 	public void updateBoard(BoardVO vo) {
-		System.out.println("===> JDBC�� updateBoard() ��� ó��");
+		System.out.println("===> JDBC로 updateBoard() 기능 처리");
 		try {
 			conn = JDBCUtil.getConnection();
 			stmt = conn.prepareStatement(BOARD_UPDATE);
@@ -59,9 +55,8 @@ public class BoardDAO {
 		}
 	}
 
-	// �� ����
 	public void deleteBoard(BoardVO vo) {
-		System.out.println("===> JDBC�� deleteBoard() ��� ó��");
+		System.out.println("===> JDBC로 deleteBoard() 기능 처리");
 		try {
 			conn = JDBCUtil.getConnection();
 			stmt = conn.prepareStatement(BOARD_DELETE);
@@ -74,9 +69,8 @@ public class BoardDAO {
 		}
 	}
 
-	// �� �� ��ȸ
 	public BoardVO getBoard(BoardVO vo) {
-		System.out.println("===> JDBC�� getBoard() ��� ó��");
+		System.out.println("===> JDBC로 getBoard() 기능 처리");
 		BoardVO board = null;
 		try {
 			conn = JDBCUtil.getConnection();
@@ -100,9 +94,8 @@ public class BoardDAO {
 		return board;
 	}
 
-	// �� ��� ��ȸ
 	public List<BoardVO> getBoardList(BoardVO vo) {
-		System.out.println("===> JDBC�� getBoardList() ��� ó��");
+		System.out.println("===> JDBC로 getBoardList() 기능 처리");
 		List<BoardVO> boardList = new ArrayList<BoardVO>();
 		try {
 			conn = JDBCUtil.getConnection();

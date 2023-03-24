@@ -12,10 +12,9 @@ public class UserServiceClient {
         UserVO vo = new UserVO();
         vo.setId("test");
         vo.setPassword("1234");
-        vo.setName("관리자");
         UserVO user = userService.getUser(vo);
         if (user != null) {
-            System.out.println(user.getName() + "님 환영합니다.");
+            System.out.println(user.getName() + "님 환영합니다. 직책: " + user.getRole() );
         }
         else {
             System.out.println("로그인 실패");
