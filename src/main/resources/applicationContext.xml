@@ -25,13 +25,25 @@
         <bean id="collectionBean" class="ioc.injection.CollectionBean">
             <property name="addressList">
                 <list>
-                    <value> 서울시 강남구 일원동</value>
+                    <value> 서울시 강남구 일원동</value>l
                     <value> 서울시 강남구 개포동</value>
                 </list>
             </property>
         </bean>-->
+    <bean id="tv2" class="day1.polymorphism.SamsungTV">
+        <property name="speaker" ref="sony"></property> <!--bean 객체 생성 동시에 setSpeaker메소드 호출-->
+        <property name="price" value="245000"></property>
+    </bean>
 
-    <bean id="log" class="day2.common.LogAdvice"></bean>
+    <bean id="appTv" class="day1.polymorphism.AppleTv">
+<!--        <constructor-arg ref="app"/>-->
+        <constructor-arg ref="app"/>
+    </bean>
+    <bean id="app" class="day1.polymorphism.AppleSpeaker"/>
+    <bean id="sony" class="day1.polymorphism.SonySpeaker"/>
+    <bean id="log" class="day2.common.LogAdvice"/>
+
+
     <aop:config>
         <aop:pointcut id="allPointcut"
                       expression="execution(* day2..*Impl.*(..))" />

@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 
 public class LgTV implements TV{
     @Autowired //자동으로 SonySpeaker 객체를 speaker변수에 할당
-    @Qualifier("apple")
+    @Qualifier("sony")
     private Speaker speaker;
 
     private int price;

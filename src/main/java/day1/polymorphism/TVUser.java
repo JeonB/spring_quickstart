@@ -14,9 +14,13 @@ public class TVUser {
         tv3.soundDown();
         tv3.turnOff();*/
         AbstractApplicationContext factory = new GenericXmlApplicationContext("applicationContext.xml");
-        TV tv = (TV) factory.getBean("lgTV");
+        TV tv = (TV) factory.getBean("appTv");
+        TV tv2 = (TV) factory.getBean("tv2");
         tv.soundUp();
         tv.soundDown();
+
+        tv2.soundUp();
+        tv2.soundDown();
 
 
         factory.close();
