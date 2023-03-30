@@ -4,46 +4,30 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:aop="http://www.springframework.org/schema/aop"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
-<!--    <context:component-scan base-package="day1.polymorphism"/>-->
-    <context:component-scan base-package="day1"/> <!--클래스들을 스캔하여 주석처리된 클래스들을 자동으로 객체 생성-->
-    <context:component-scan base-package="day2"/>
-<!--    <bean class="day1.polymorphism.AppleSpeaker"/>-->
-<!--&lt;!&ndash;       <bean id="tv" class="polymorphism.SamsungTV" init-method="initMethod" destroy-method="destroyMethod" lazy-init="true" scope="singleton"></bean>&ndash;&gt;
-       <bean id="tv" class="polymorphism.SamsungTV">
-&lt;!&ndash;              <constructor-arg index="0" ref="apple"></constructor-arg>&ndash;&gt;
-&lt;!&ndash;              <constructor-arg index="1" value="2700000"></constructor-arg>&ndash;&gt;
-              <property name="speaker" ref="apple"></property>
-              <property name="price" value="8798798"></property>
-       </bean>
-       <bean id="tv2" class="polymorphism.LgTV">
-           <property name="speaker" ref="sony"></property> &lt;!&ndash;bean 객체 생성 동시에 setSpeaker메소드 호출 &ndash;&gt;
-           <property name="price" value="245000"></property>
-       </bean>
-       <bean id="tv3" class="polymorphism.SamsungTV" p:speaker-ref="apple" p:price="10000000"></bean>
 
-       <bean id="sony" class="polymorphism.SonySpeaker"></bean>
-       <bean id ="apple" class="polymorphism.AppleSpeaker"></bean>
-        <bean id="collectionBean" class="ioc.injection.CollectionBean">
-            <property name="addressList">
-                <list>
-                    <value> 서울시 강남구 일원동</value>l
-                    <value> 서울시 강남구 개포동</value>
-                </list>
-            </property>
-        </bean>-->
+<!--    <context:component-scan base-package="day1"/> &lt;!&ndash;클래스들을 스캔하여 주석처리된 클래스들을 자동으로 객체 생성&ndash;&gt;-->
+    <context:component-scan base-package="day2"/>
+
     <bean id="tv2" class="day1.polymorphism.SamsungTV">
         <property name="speaker" ref="sony"></property> <!--bean 객체 생성 동시에 setSpeaker메소드 호출-->
         <property name="price" value="245000"></property>
     </bean>
 
     <bean id="appTv" class="day1.polymorphism.AppleTv">
-<!--        <constructor-arg ref="app"/>-->
         <constructor-arg ref="app"/>
     </bean>
     <bean id="app" class="day1.polymorphism.AppleSpeaker"/>
     <bean id="sony" class="day1.polymorphism.SonySpeaker"/>
     <bean id="log" class="day2.common.LogAdvice"/>
 
+    <bean id="collectionBean" class="day1.ioc_injection.CollectionBean">
+        <property name="addressList">
+            <list>
+                <value> 서울시 강남구 일원동</value>
+                <value> 서울시 강남구 개포동</value>
+            </list>
+        </property>
+    </bean>
 
     <aop:config>
         <aop:pointcut id="allPointcut"
