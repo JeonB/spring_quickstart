@@ -2,10 +2,12 @@ package day1.polymorphism;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
+@Component("LgTV") //반드시 스프링 컨테이너에 bean을 등록하는 주석처리를 해야만 멤버변수에 @Autowired 같은 주석처리가 가능하다
 public class LgTV implements TV{
     @Autowired //자동으로 SonySpeaker 객체를 speaker변수에 할당
-    @Qualifier("sony")
+    @Qualifier("LgSpeaker")
     private Speaker speaker;
 
     private int price;
