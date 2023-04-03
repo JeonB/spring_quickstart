@@ -9,7 +9,7 @@ public class JDBCUtil {
 	public static Connection getConnection() {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			return DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "scott", "tiger");
+			return DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "jeonb", "1234");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
