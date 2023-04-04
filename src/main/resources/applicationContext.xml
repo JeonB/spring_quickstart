@@ -34,6 +34,9 @@
     <bean id="log" class="day2.common.LogAdvice"/>
     <bean id="before" class="day2.common.BeforeAdvice"/>
     <bean id="afterReturning" class="day2.common.AfterReturningAdvice"/>
+    <bean id="afterThrowing" class="day2.common.AfterThrowingAdvice"/>
+    <bean id="after" class="day2.common.AfterAdvice"/>
+    <bean id="around" class="day2.common.AroundAdvice"/>
     <aop:config>
         <aop:pointcut id="allPointcut"
                       expression="execution(* day2..*Impl.*(..))" />
@@ -41,16 +44,28 @@
                       expression="execution(* day2..*Impl.get*(..))"/>
         <aop:pointcut id="testPointcut"
                       expression="execution(* day2..*Test.*(..))"/>
-        <aop:aspect ref="log">
-            <aop:after pointcut-ref="getPointcut" method="printLog" />
-        </aop:aspect>
+<!--        <aop:aspect ref="log">-->
+<!--            <aop:after pointcut-ref="getPointcut" method="printLog" />-->
+<!--        </aop:aspect>-->
 
-        <aop:aspect ref="before">
-            <aop:before pointcut-ref="allPointcut" method="beforeLog"/>
-        </aop:aspect>
+<!--        <aop:aspect ref="before">-->
+<!--            <aop:before pointcut-ref="allPointcut" method="beforeLog"/>-->
+<!--        </aop:aspect>-->
 
-        <aop:aspect ref="afterReturning">
-            <aop:after-returning pointcut-ref="testPointcut" method="afterLog"/>
+<!--        <aop:aspect ref="afterThrowing">-->
+<!--            <aop:after-throwing pointcut-ref="allPointcut" method="exceptionLog"/>-->
+<!--        </aop:aspect>-->
+
+<!--        <aop:aspect ref="after">-->
+<!--            <aop:after pointcut-ref="allPointcut" method="finallyLog"/>-->
+<!--        </aop:aspect>-->
+
+<!--        <aop:aspect ref="afterReturning">-->
+<!--            <aop:after-returning pointcut-ref="testPointcut" method="afterLog"/>-->
+<!--        </aop:aspect>-->
+
+        <aop:aspect ref="around">
+            <aop:around pointcut-ref="allPointcut" method="aroundLog"/>
         </aop:aspect>
 
     </aop:config>

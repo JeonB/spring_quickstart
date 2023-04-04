@@ -13,6 +13,9 @@ public class BoardServiceImpl implements BoardService {
 	private BoardDAO boardDAO;
 
 	public void insertBoard(BoardVO vo) {
+//		if(vo.getSeq() == 0){
+//			throw new IllegalArgumentException("0번글은 등록 불가");
+//		}
 		boardDAO.insertBoard(vo);
 	}
 
