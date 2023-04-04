@@ -5,7 +5,7 @@ import org.springframework.context.support.GenericXmlApplicationContext;
 
 public class UserServiceClient {
     public static void main(String[] args) {
-        AbstractApplicationContext container = new GenericXmlApplicationContext("applicationContext.xml");
+        AbstractApplicationContext container = new GenericXmlApplicationContext("applicationContext_day2.xml");
 
         UserService userService = (UserService) container.getBean("userService");
 

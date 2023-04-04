@@ -6,7 +6,7 @@ import org.springframework.context.support.GenericXmlApplicationContext;
 public class TVUser {
     public static void main(String[] args) {
 
-        AbstractApplicationContext factory = new GenericXmlApplicationContext("applicationContext.xml");
+        AbstractApplicationContext factory = new GenericXmlApplicationContext("applicationContext_day1.xml");
         TV tv = (TV) factory.getBean("appTv");
         TV tv2 = (TV) factory.getBean("tv2");
         TV tv3 = (TV) factory.getBean("LgTV");
