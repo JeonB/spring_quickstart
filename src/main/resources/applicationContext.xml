@@ -48,9 +48,9 @@
 <!--            <aop:after pointcut-ref="getPointcut" method="printLog" />-->
 <!--        </aop:aspect>-->
 
-<!--        <aop:aspect ref="before">-->
-<!--            <aop:before pointcut-ref="allPointcut" method="beforeLog"/>-->
-<!--        </aop:aspect>-->
+        <aop:aspect ref="before">
+            <aop:before pointcut-ref="allPointcut" method="beforeLog"/>
+        </aop:aspect>
 
 <!--        <aop:aspect ref="afterThrowing">-->
 <!--            <aop:after-throwing pointcut-ref="allPointcut" method="exceptionLog"/>-->
