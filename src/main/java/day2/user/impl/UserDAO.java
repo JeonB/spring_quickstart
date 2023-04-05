@@ -12,11 +12,10 @@ import org.springframework.stereotype.Repository;
 // DAO(Data Access Object)
 @Repository("userDAO")
 public class UserDAO {
-	// JDBC ���� ����
 	private Connection conn = null;
 	private PreparedStatement stmt = null;
 	private ResultSet rs = null;
-	// SQL ��ɾ��
+	// SQL 쿼리문
 	private final String USER_GET = "select * from users where id=? and password=?";
 
 	// CRUD ����� �޼ҵ� ����

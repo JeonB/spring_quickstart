@@ -1,7 +1,7 @@
 package day3.user.impl;
 
-import day2.common.JDBCUtil;
-import day2.user.UserVO;
+import day3.common.JDBCUtil;
+import day3.user.UserVO;
 import org.springframework.stereotype.Repository;
 
 import java.sql.Connection;

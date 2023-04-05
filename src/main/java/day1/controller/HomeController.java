@@ -11,4 +11,14 @@ public class HomeController {
         model.addAttribute("data", "Hello, Spring from IntelliJ! :)");
         return "index";
     }
+
+    @RequestMapping("/login")
+    public String login() {
+        return "login";
+    }
+
+    @RequestMapping("/login_proc")
+    public String login_proc() {
+        return "login_proc";
+    }
 }

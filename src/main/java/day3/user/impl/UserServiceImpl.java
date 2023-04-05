@@ -1,7 +1,6 @@
 package day3.user.impl;
 
-import day2.user.UserVO;
-import day2.user.impl.UserDAO;
+import day3.user.UserVO;
 import day3.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
