@@ -1,16 +1,16 @@
-package day2.user.impl;
-
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+package day3.user.impl;
 
 import day2.common.JDBCUtil;
 import day2.user.UserVO;
 import org.springframework.stereotype.Repository;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
 
 // DAO(Data Access Object)
-@Repository("userDAO")
+@Repository("userDAO2")
 public class UserDAO {
 	// JDBC ���� ����
 	private Connection conn = null;

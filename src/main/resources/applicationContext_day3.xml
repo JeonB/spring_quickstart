@@ -5,45 +5,20 @@
        xmlns:aop="http://www.springframework.org/schema/aop"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
 
-     <!--클래스들을 스캔하여 주석처리된 클래스들을 자동으로 객체 생성-->
-<!--day1
-    <context:component-scan base-package="day1"/>
-    <bean id="tv2" class="day1.polymorphism.SamsungTV">
-        <property name="speaker" ref="sony"></property> &lt;!&ndash;bean 객체 생성 동시에 setSpeaker메소드 호출&ndash;&gt;
-        <property name="price" value="245000"></property>
-    </bean>
-
-    <bean id="appTv" class="day1.polymorphism.AppleTv">
-        <constructor-arg ref="app"/>
-    </bean>
-    <bean id="app" class="day1.polymorphism.AppleSpeaker"/>
-    <bean id="sony" class="day1.polymorphism.SonySpeaker"/>
-
-    <bean id="collectionBean" class="day1.ioc_injection.CollectionBean">
-        <property name="addressList">
-            <list>
-
-                <value> 서울시 강남구 일원동</value>
-                <value> 서울시 강남구 개포동</value>
-            </list>
-        </property>
-    </bean>
--->
-
-    <context:component-scan base-package="day2"/>
-    <bean id="log" class="day2.common.LogAdvice"/>
-    <bean id="before" class="day2.common.BeforeAdvice"/>
-    <bean id="afterReturning" class="day2.common.AfterReturningAdvice"/>
-    <bean id="afterThrowing" class="day2.common.AfterThrowingAdvice"/>
-    <bean id="after" class="day2.common.AfterAdvice"/>
-    <bean id="around" class="day2.common.AroundAdvice"/>
+    <context:component-scan base-package="day3"/>
+    <bean id="log" class="day3.common.LogAdvice"/>
+    <bean id="before" class="day3.common.BeforeAdvice"/>
+    <bean id="afterReturning" class="day3.common.AfterReturningAdvice"/>
+    <bean id="afterThrowing" class="day3.common.AfterThrowingAdvice"/>
+    <bean id="after" class="day3.common.AfterAdvice"/>
+    <bean id="around" class="day3.common.AroundAdvice"/>
     <aop:config>
         <aop:pointcut id="allPointcut"
-                      expression="execution(* day2..*Impl.*(..))" />
+                      expression="execution(* day3..*Impl.*(..))" />
         <aop:pointcut id="getPointcut"
-                      expression="execution(* day2..*Impl.get*(..))"/>
+                      expression="execution(* day3..*Impl.get*(..))"/>
         <aop:pointcut id="testPointcut"
-                      expression="execution(* day2..*Test.*(..))"/>
+                      expression="execution(* day3..*Test.*(..))"/>
 <!--        <aop:aspect ref="log">-->
 <!--            <aop:after pointcut-ref="getPointcut" method="printLog" />-->
 <!--        </aop:aspect>-->
@@ -51,18 +26,6 @@
         <aop:aspect ref="before">
             <aop:before pointcut-ref="allPointcut" method="beforeLog"/>
         </aop:aspect>
-
-<!--        <aop:aspect ref="afterThrowing">-->
-<!--            <aop:after-throwing pointcut-ref="allPointcut" method="exceptionLog"/>-->
-<!--        </aop:aspect>-->
-
-<!--        <aop:aspect ref="after">-->
-<!--            <aop:after pointcut-ref="allPointcut" method="finallyLog"/>-->
-<!--        </aop:aspect>-->
-
-<!--        <aop:aspect ref="afterReturning">-->
-<!--            <aop:after-returning pointcut-ref="testPointcut" method="afterLog"/>-->
-<!--        </aop:aspect>-->
 
         <aop:aspect ref="around">
             <aop:around pointcut-ref="allPointcut" method="aroundLog"/>

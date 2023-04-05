@@ -12,5 +12,5 @@
         <property name="order" value="1"/>
     </bean>
 
-    <context:component-scan base-package="com.hihi.go"/>
+    <context:component-scan base-package="day1.controller"/>
 </beans>
