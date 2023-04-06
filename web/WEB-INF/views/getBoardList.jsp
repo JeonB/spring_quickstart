@@ -1,6 +1,6 @@
 <%@page import="java.util.List"%>
-<%@page import="com.springbook.biz.board.impl.BoardDAO"%>
-<%@page import="com.springbook.biz.board.BoardVO"%>
+<%@page import="day3.board.impl.BoardDAO"%>
+<%@page import="day3.board.BoardVO"%>
 <%@page contentType="text/html; charset=EUC-KR"%>
 
 <%

@@ -1,5 +1,5 @@
-<%@page import="com.springbook.biz.user.impl.UserDAO"%>
-<%@page import="com.springbook.biz.user.UserVO"%>
+<%@page import="day3.user.impl.UserDAO"%>
+<%@page import="day3.user.UserVO"%>
 <%@page contentType="text/html; charset=EUC-KR"%>
 
 <%
@@ -16,8 +16,8 @@
 	
 	// 3. 화면 네비게이션
 	if (user != null) {
-		response.sendRedirect("getBoardList.jsp");
+		response.sendRedirect("getBoardList");
 	} else {
-		response.sendRedirect("login.jsp");
+		response.sendRedirect("login");
 	}
 %>
