@@ -1,4 +1,4 @@
-package day1.controller;
+package day3.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

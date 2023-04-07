@@ -1,20 +1,20 @@
 <%@page import="day3.user.impl.UserDAO"%>
 <%@page import="day3.user.UserVO"%>
-<%@page contentType="text/html; charset=EUC-KR"%>
+<%@page contentType="text/html; charset=UTF-8"%>
 
 <%
-	// 1. »ç¿ëÀÚ ÀÔ·Â Á¤º¸ ÃßÃâ
+	// 1. ì‚¬ìš©ìž ìž…ë ¥ ì •ë³´ ì¶”ì¶œ
 	String id = request.getParameter("id");
 	String password = request.getParameter("password");
 	
-	// 2. DB ¿¬µ¿ Ã³¸®
+	// 2. DB ì—°ë™ ì²˜ë¦¬
 	UserVO vo = new UserVO();
 	vo.setId(id);
 	vo.setPassword(password);
 	UserDAO userDAO = new UserDAO();
 	UserVO user = userDAO.getUser(vo);
 	
-	// 3. È­¸é ³×ºñ°ÔÀÌ¼Ç
+	// 3. í™”ë©´ ë„¤ë¹„ê²Œì´ì…˜
 	if (user != null) {
 		response.sendRedirect("getBoardList");
 	} else {

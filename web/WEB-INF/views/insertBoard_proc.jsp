@@ -1,5 +1,5 @@
-<%@page import="com.springbook.biz.board.impl.BoardDAO"%>
-<%@page import="com.springbook.biz.board.BoardVO"%>
+<%@page import="day3.board.impl.BoardDAO"%>
+<%@page import="day3.board.BoardVO"%>
 <%@page contentType="text/html; charset=EUC-KR"%>
 
 <%
@@ -18,5 +18,5 @@
 	boardDAO.insertBoard(vo);
 	
 	// 3. 화면 네비게이션
-	response.sendRedirect("getBoardList.jsp");
+	response.sendRedirect("getBoardList");
 %>

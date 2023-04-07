@@ -12,19 +12,15 @@ import java.sql.ResultSet;
 // DAO(Data Access Object)
 @Repository("userDAO2")
 public class UserDAO {
-	// JDBC ���� ����
 	private Connection conn = null;
 	private PreparedStatement stmt = null;
 	private ResultSet rs = null;
-	// SQL ��ɾ��
 	private final String USER_GET = "select * from users where id=? and password=?";
 
-	// CRUD ����� �޼ҵ� ����
-	// ȸ�� ���
 	public UserVO getUser(UserVO vo) {
 		UserVO user = null;
 		try {
-			System.out.println("===> JDBC�� getUser() ��� ó��");
+			System.out.println("===> JDBC로 getUser() 메소드 호출");
 			conn = JDBCUtil.getConnection();
 			stmt = conn.prepareStatement(USER_GET);
 			stmt.setString(1, vo.getId());

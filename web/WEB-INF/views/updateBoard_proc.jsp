@@ -1,15 +1,15 @@
-<%@page import="com.springbook.biz.board.impl.BoardDAO"%>
-<%@page import="com.springbook.biz.board.BoardVO"%>
-<%@page contentType="text/html; charset=EUC-KR"%>
+<%@page import="day3.board.impl.BoardDAO"%>
+<%@page import="day3.board.BoardVO"%>
+<%@page contentType="text/html; charset=UTF-8"%>
 
 <%
-	// 1. »ç¿ëÀÚ ÀÔ·Â Á¤º¸ ÃßÃâ
-	request.setCharacterEncoding("EUC-KR");
+	// 1. ì‚¬ìš©ìž ìž…ë ¥ ì •ë³´ ì¶”ì¶œ
+	request.setCharacterEncoding("UTF-8");
 	String title = request.getParameter("title");
 	String content = request.getParameter("content");
 	String seq = request.getParameter("seq");
 
-	// 2. DB ¿¬µ¿ Ã³¸®
+	// 2. DB ì—°ë™ ì²˜ë¦¬
 	BoardVO vo = new BoardVO();
 	vo.setTitle(title);
 	vo.setContent(content);
@@ -17,6 +17,6 @@
 	BoardDAO boardDAO = new BoardDAO();
 	boardDAO.updateBoard(vo);
 
-	// 3. È­¸é ³×ºñ°ÔÀÌ¼Ç
-	response.sendRedirect("getBoardList.jsp");
+	// 3. í™”ë©´ ë„¤ë¹„ê²Œì´ì…˜
+	response.sendRedirect("getBoardList");
 %>
