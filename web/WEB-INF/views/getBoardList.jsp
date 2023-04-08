@@ -1,68 +1,53 @@
-<%@page import="java.util.List"%>
-<%@page import="day3.board.impl.BoardDAO"%>
-<%@page import="day3.board.BoardVO"%>
-<%@page contentType="text/html; charset=EUC-KR"%>
 
-<%
-	// 1. »ç¿ëÀÚ ÀÔ·Â Á¤º¸ ÃßÃâ(°Ë»ö ±â´ÉÀº ³ªÁß¿¡ ±¸Çö)
-	// 2. DB ¿¬µ¿ Ã³¸®
-	BoardVO vo = new BoardVO();
-	BoardDAO boardDAO = new BoardDAO();
-	List<BoardVO> boardList = boardDAO.getBoardList(vo);
-
-	// 3. ÀÀ´ä È­¸é ±¸¼º
-%>
+<%@page contentType="text/html; charset=UTF-8"%>
+<%@taglib uri = "http://java.sun.com/jstl/core_rt" prefix="c" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>±Û ¸ñ·Ï</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ê¸€ ëª©ë¡</title>
 </head>
 <body>
 	<div align="center">
-		<h1>±Û ¸ñ·Ï</h1>
+		<h1>ê¸€ ëª©ë¡</h1>
 		<h3>
-			°ü¸®ÀÚ´Ô È¯¿µÇÕ´Ï´Ù...<a href="logout.do">Log-out</a>
+			ê´€ë¦¬ìžë‹˜ í™˜ì˜í•©ë‹ˆë‹¤...<a href="logout.do">Log-out</a>
 		</h3>
-		<!-- °Ë»ö ½ÃÀÛ -->
+		<!-- ê²€ìƒ‰ ì‹œìž‘ -->
 		<form action="getBoardList" method="post">
 			<table border="1" cellpadding="0" cellspacing="0" width="700">
 				<tr>
 					<td align="right"><select name="searchCondition">
-							<option value="TITLE">Á¦¸ñ
-							<option value="CONTENT">³»¿ë
+							<option value="TITLE">ì œëª©
+							<option value="CONTENT">ë‚´ìš©
 					</select> <input name="searchKeyword" type="text" /> <input type="submit"
-						value="°Ë»ö" /></td>
+						value="ê²€ìƒ‰" /></td>
 				</tr>
 			</table>
 		</form>
-		<!-- °Ë»ö Á¾·á -->
+		<!-- ê²€ìƒ‰ ì¢…ë£Œ -->
 		<table border="1" cellpadding="0" cellspacing="0" width="700">
 			<tr>
-				<th bgcolor="orange" width="100">¹øÈ£</th>
-				<th bgcolor="orange" width="200">Á¦¸ñ</th>
-				<th bgcolor="orange" width="150">ÀÛ¼ºÀÚ</th>
-				<th bgcolor="orange" width="150">µî·ÏÀÏ</th>
-				<th bgcolor="orange" width="100">Á¶È¸¼ö</th>
+				<th bgcolor="orange" width="100">ë²ˆí˜¸</th>
+				<th bgcolor="orange" width="200">ì œëª©</th>
+				<th bgcolor="orange" width="150">ìž‘ì„±ìž</th>
+				<th bgcolor="orange" width="150">ë“±ë¡ì¼</th>
+				<th bgcolor="orange" width="100">ì¡°íšŒìˆ˜</th>
 			</tr>
-			<%
-				for (BoardVO board : boardList) {
-			%>
+			<c:forEach items="${boardList}" var="board">
 			<tr>
-				<td><%=board.getSeq()%></td>
-				<td align="left"><a href="getBoard.do?seq=<%=board.getSeq()%>">
-						<%=board.getTitle()%></a></td>
-				<td><%=board.getWriter()%></td>
-				<td><%=board.getRegDate()%></td>
-				<td><%=board.getCnt()%></td>
+				<td>${board.seq}</td>
+				<td align="left"><a href="getBoard.do?seq=${board.seq}>">
+						${board.title}</a></td>
+				<td>${board.writer}></td>
+				<td>${board.regDate}</td>
+				<td>${board.cnt}</td>
 			</tr>
-			<%
-				}
-			%>
+			</c:forEach>
 		</table>
-		<br> <a href="insertBoard">»õ±Û µî·Ï</a>
+		<br> <a href="insertBoard">ìƒˆê¸€ ë“±ë¡</a>
 	</div>
 </body>
 </html>

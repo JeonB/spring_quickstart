@@ -1,5 +1,5 @@
-<%@page import="day3.user.impl.UserDAO"%>
-<%@page import="day3.user.UserVO"%>
+<%@page import="day3.view.user.impl.UserDAO"%>
+<%@page import="day3.view.user.UserVO"%>
 <%@page contentType="text/html; charset=UTF-8"%>
 
 <%

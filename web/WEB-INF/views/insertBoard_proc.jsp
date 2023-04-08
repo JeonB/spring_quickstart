@@ -1,5 +1,5 @@
-<%@page import="day3.board.impl.BoardDAO"%>
-<%@page import="day3.board.BoardVO"%>
+<%@page import="day3.view.board.impl.BoardDAO"%>
+<%@page import="day3.view.board.BoardVO"%>
 <%@page contentType="text/html; charset=EUC-KR"%>
 
 <%
