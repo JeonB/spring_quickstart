@@ -15,9 +15,6 @@
                       expression="execution(* day3..*Impl.*(..))" />
         <aop:pointcut id="getPointcut"
                       expression="execution(* day3..*Impl.get*(..))"/>
-<!--        <aop:aspect ref="log">-->
-<!--            <aop:after pointcut-ref="getPointcut" method="printLog" />-->
-<!--        </aop:aspect>-->
 
         <aop:aspect ref="before">
             <aop:before pointcut-ref="allPointcut" method="beforeLog"/>
