@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 // 클라이언트의 요청을 가장 먼저 받아들이는 Front Controller.
+// 클라이언트의 모든 요청을 받아서 처리한 후, 요청한 URL에 따라서 적절한 핸들러(Controller)에 요청을 전달
+// 해당 핸들러가 반환한 결과를 뷰(View)에 전달하여 클라이언트에게 반환
 public class DispatcherServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private HandlerMapping handlerMapping;
@@ -27,7 +29,7 @@ public class DispatcherServlet extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         process(request,response);
     }
-
+    //핵심메소드
     private void process(HttpServletRequest request, HttpServletResponse response) throws IOException{
         // 1. 클라이언트의 요청 path 정보 추출
         String uri = request.getRequestURI();
