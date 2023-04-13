@@ -12,8 +12,8 @@ import java.sql.SQLException;
 @Repository
 public class BoardDAO extends JDBCUtill{
     private Connection conn;
-    private PreparedStatement pstmt;
-    private ResultSet rs;
+    private PreparedStatement pstmt; // 사전에 컴파일된 SQL문을 나타내는 객체(PreparedStatement는 인터페이스)
+    private ResultSet rs; //쿼리문을 실행할 때 생성되는 데이터베이스 result set
 
     // BoardDAO 생성자
     public BoardDAO() throws SQLException {
@@ -24,7 +24,7 @@ public class BoardDAO extends JDBCUtill{
     public void insert(BoardVO vo) {
         String sql = "INSERT INTO board (seq, title, writer, content) VALUES (?, ?, ?, ?)";
         try {
-            pstmt = conn.prepareStatement(sql);
+            pstmt = conn.prepareStatement(sql); //DB에 SQL문을 보내기 위한 객체가 prreparedStatement
             pstmt.setInt(1, vo.getSeq());
             pstmt.setString(2, vo.getTitle());
             pstmt.setString(3, vo.getWriter());

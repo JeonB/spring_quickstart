@@ -6,10 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service("userService")
 public class UserServiceImpl implements UserService {
 	@Autowired
-	@Qualifier("userDAO2")
 	private UserDAO userDAO;
 
 	public void setUserDAO(UserDAO userDAO) {
@@ -19,5 +20,16 @@ public class UserServiceImpl implements UserService {
 	public UserVO getUser(UserVO vo) {
 		return userDAO.getUser(vo);
 	}
+	public void insertUser(UserVO vo) {
+		userDAO.insertUser(vo);
+	}
+	public void deleteUser(UserVO vo) {
+		userDAO.deleteUser(vo);
+	}
+	public void updateUser(UserVO vo) {
+		userDAO.updateUser(vo);
+	}
+
+	public List<UserVO> getUserList(){return userDAO.getUserList();}
 
 }
