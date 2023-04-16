@@ -12,13 +12,14 @@ public class UserServiceClient {
 
         UserService userService = (UserService) container.getBean("userService");
 
-//        UserVO vo = new UserVO();
-//        vo.setId("jamesweb");
-//        vo.setPassword("@1234");
-//        vo.setName("mr.jeon");
-//        vo.setRole("masterCo");
+        UserVO vo = new UserVO();
+        vo.setId("jamesweb");
+        vo.setPassword("@1234");
+        vo.setName("mr.jeon");
+        vo.setRole("mas");
 
-//        userService.insertUser(vo);
+        userService.insertUser(vo);
+
         List<UserVO> userList = userService.getUserList();
         for (UserVO userlist: userList) {
             System.out.println("-->" + userlist.toString());
