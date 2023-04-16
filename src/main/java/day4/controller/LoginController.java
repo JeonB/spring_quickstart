@@ -33,7 +33,7 @@ public class LoginController implements Controller {
             mav.setViewName("getBoardList.do");
         }
         else {
-            mav.setViewName("login");
+            mav.setViewName("WEB-INF/views/login.jsp");
         }
         return mav;
     }

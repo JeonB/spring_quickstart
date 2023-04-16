@@ -9,10 +9,12 @@
             <property name="mappings">
                 <props>
                     <prop key="/login.do">login</prop>
+                    <prop key="/getBoardList.do">getBoardList</prop>
                 </props>
             </property>
         </bean>
 
         <bean id="login" class="day4.controller.LoginController"></bean>
+        <bean id="getBoardList" class="day4.controller.GetBoardListController"></bean>
 
 </beans>
