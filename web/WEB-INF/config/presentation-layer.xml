@@ -10,11 +10,15 @@
                 <props>
                     <prop key="/login.do">login</prop>
                     <prop key="/getBoardList.do">getBoardList</prop>
+                    <prop key="/logout.do">logout</prop>
+                    <prop key="/deleteboard.do">deleteBoard</prop>
                 </props>
             </property>
         </bean>
 
         <bean id="login" class="day4.controller.LoginController"></bean>
         <bean id="getBoardList" class="day4.controller.GetBoardListController"></bean>
+        <bean id="logout" class="day4.controller.LogoutController"/>
+        <bean id="deleteBoard" class="day4.controller.DeleteBoardController"/>
 
 </beans>
