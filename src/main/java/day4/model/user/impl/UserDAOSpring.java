@@ -15,7 +15,7 @@ public class UserDAOSpring {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
-    private final String USER_GET = "select * from users where id=?";
+    private final String USER_GET = "select * from users where id =? and password=?";
     private final String USER_INSERT = "insert into users(id,password,name,role) values(?,?,?,?)";
     private final String USER_DELETE = "DELETE USERS WHERE ID=?";
     private final String USER_UPDATE = "UPDATE USERS SET PASSWORD=? WHERE ID=?";
@@ -23,7 +23,7 @@ public class UserDAOSpring {
 
     public UserVO getUser(UserVO vo){
         System.out.println("===> Spring JDBC로 getUser() 기능 처리");
-        Object[] args = {vo.getId()};
+        Object[] args = {vo.getId(),vo.getPassword()};
         return jdbcTemplate.queryForObject(USER_GET, args,  new UserRowMapper());
     }
 

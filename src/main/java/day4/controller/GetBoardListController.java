@@ -3,6 +3,7 @@ package day4.controller;
 
 import day4.model.board.BoardVO;
 import day4.model.board.impl.BoardDAO;
+import day4.model.board.impl.BoardDAOSpring;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.Controller;
 
@@ -18,7 +19,7 @@ public class GetBoardListController implements Controller {
         // 1. 사용자 입력 정보 추출(검색 기능은 나중에 구현)
         // 2. DB 연동 처리
         BoardVO vo = new BoardVO();
-        BoardDAO boardDAO = new BoardDAO();
+        BoardDAOSpring boardDAO = new BoardDAOSpring();
         List<BoardVO> boardList = boardDAO.getBoardList(vo);
 
         // 3. 검색 결과를 ModelAndView에 저장하여 리턴

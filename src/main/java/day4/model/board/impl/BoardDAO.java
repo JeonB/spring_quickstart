@@ -11,7 +11,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 // DAO(Data Access Object)
-@Repository("boardDAO")
 public class BoardDAO {
 	private Connection conn = null;
 	private PreparedStatement stmt = null;

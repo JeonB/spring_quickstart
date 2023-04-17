@@ -3,6 +3,7 @@ package day4.controller;
 
 import day4.model.user.UserVO;
 import day4.model.user.impl.UserDAO;
+import day4.model.user.impl.UserDAOSpring;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.Controller;
 
@@ -24,7 +25,7 @@ public class LoginController implements Controller {
         vo.setId(id);
         vo.setPassword(password);
 
-        UserDAO userDAO = new UserDAO();
+        UserDAOSpring userDAO = new UserDAOSpring();
         UserVO user = userDAO.getUser(vo);
 
         // 3. 화면 네비게이션

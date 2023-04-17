@@ -3,6 +3,7 @@ package day4.controller;
 
 import day4.model.board.BoardVO;
 import day4.model.board.impl.BoardDAO;
+import day4.model.board.impl.BoardDAOSpring;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.Controller;
 
@@ -19,7 +20,7 @@ public class DeleteBoardController implements Controller {
         // 2. DB 연동 처리
         BoardVO vo = new BoardVO();
         vo.setSeq(Integer.parseInt(seq));
-        BoardDAO boardDAO = new BoardDAO();
+        BoardDAOSpring boardDAO = new BoardDAOSpring();
         boardDAO.deleteBoard(vo);
 
         // 3. 화면 네비게이션

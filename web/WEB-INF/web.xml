@@ -4,14 +4,14 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>WEB-INF/spring/applicationContext.xml</param-value>
     </context-param>
-
-    <listener>
-        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-    </listener>
 
 <!--    <servlet>-->
 <!--        <servlet-name>dispatcher</servlet-name>-->
@@ -28,11 +28,7 @@
 <!--        <url-pattern>/</url-pattern>-->
 <!--    </servlet-mapping>-->
 
-<!--    <servlet>-->
-<!--        <servlet-name>action</servlet-name>-->
-<!--        <servlet-class>day3.controller.DispatcherServlet</servlet-class>-->
-<!--    </servlet>-->
-<!--    -->
+
     <filter>
         <filter-name>characterEncoding</filter-name>
         <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
@@ -61,4 +57,5 @@
         <!-- do 로 끝나는 url은 action 이라는 이름의 디스패쳐 서블릿으로 보내겠다는 뜻입니다.
             즉, 1개 이상의 url 패턴을 서블릿 하나에 매핑 시킬 수 있다-->
     </servlet-mapping>
+
 </web-app>
