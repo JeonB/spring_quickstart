@@ -13,7 +13,8 @@ import java.util.List;
 
 // DAO(Data Access Object)
 @Repository("userDAO")
-public class UserDAO {
+public class
+UserDAO {
 	private Connection conn = null;
 	private PreparedStatement stmt = null;
 	private ResultSet rs = null;

@@ -7,15 +7,15 @@ import java.util.List;
 
 public class UserServiceClient {
     public static void main(String[] args) {
-        AbstractApplicationContext container = new GenericXmlApplicationContext("applicationContext_day3.xml");
+        AbstractApplicationContext container = new GenericXmlApplicationContext("applicationContext_day4.xml");
 
         UserService userService = (UserService) container.getBean("userService");
 
         UserVO vo = new UserVO();
-        vo.setId("jamesweb");
-        vo.setPassword("@1234");
-        vo.setName("mr.jeon");
-        vo.setRole("mas");
+        vo.setId("endeavor810");
+        vo.setPassword("1234");
+        vo.setName("jeonb");
+        vo.setRole("roto");
 
         userService.insertUser(vo);
 

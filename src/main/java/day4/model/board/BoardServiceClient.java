@@ -7,7 +7,7 @@ import java.util.List;
 
 public class BoardServiceClient {
     public static void main(String[] args) {
-        AbstractApplicationContext container = new GenericXmlApplicationContext("applicationContext_day3.xml");
+        AbstractApplicationContext container = new GenericXmlApplicationContext("applicationContext_day4.xml");
 
         BoardService boardService = (BoardService) container.getBean("boardService");
 

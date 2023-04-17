@@ -11,7 +11,7 @@
                     <prop key="/login.do">login</prop>
                     <prop key="/getBoardList.do">getBoardList</prop>
                     <prop key="/logout.do">logout</prop>
-                    <prop key="/deleteboard.do">deleteBoard</prop>
+                    <prop key="/deleteBoard.do">deleteBoard</prop>
                 </props>
             </property>
         </bean>
