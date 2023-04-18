@@ -16,7 +16,7 @@ public class LogoutController implements Controller {
         session.invalidate();
         // 2. 세션 종료 후, 메인 화면으로 이동한다.
         ModelAndView mav = new ModelAndView();
-        mav.setViewName("WEB-INF/views/login.jsp");
+        mav.setViewName("redirect:login.jsp");
         return mav;
     }
 }

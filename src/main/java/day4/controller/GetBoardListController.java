@@ -19,13 +19,13 @@ public class GetBoardListController implements Controller {
         // 1. 사용자 입력 정보 추출(검색 기능은 나중에 구현)
         // 2. DB 연동 처리
         BoardVO vo = new BoardVO();
-        BoardDAOSpring boardDAO = new BoardDAOSpring();
+        BoardDAO boardDAO = new BoardDAO();
         List<BoardVO> boardList = boardDAO.getBoardList(vo);
 
         // 3. 검색 결과를 ModelAndView에 저장하여 리턴
         ModelAndView mav = new ModelAndView();
         mav.addObject("boardList", boardList); // Model 정보 저장
-        mav.setViewName("WEB-INF/views/getBoardList.jsp"); // view 정보 저장
+        mav.setViewName("getBoardList"); // view 정보 저장
         return mav;
     }
 }

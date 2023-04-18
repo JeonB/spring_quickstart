@@ -1,31 +1,33 @@
 package day4.controller;
 
 
+
 import day4.model.board.BoardVO;
 import day4.model.board.impl.BoardDAO;
-import day4.model.board.impl.BoardDAOSpring;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.Controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-public class DeleteBoardController implements Controller {
+public class GetBoardController implements Controller {
     @Override
     public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) {
-        System.out.println("글 삭제 처리");
-        // 1. 사용자 입력 정보 추출
+        System.out.println("글 상세 조회 처리");
+        // 1. 검색할 게시글 번호 추출
         String seq = request.getParameter("seq");
 
         // 2. DB 연동 처리
         BoardVO vo = new BoardVO();
         vo.setSeq(Integer.parseInt(seq));
         BoardDAO boardDAO = new BoardDAO();
-        boardDAO.deleteBoard(vo);
+        BoardVO board = boardDAO.getBoard(vo);
 
-        // 3. 화면 네비게이션
+        // 3. 검색 결과를 ModelAndView에 저장하고 리턴
         ModelAndView mav = new ModelAndView();
-        mav.setViewName("redirect:getBoardList.do");
+        mav.addObject("board", board); //Model 정보 저장
+        mav.setViewName("getBoard");           // View 정보 저장
         return mav;
     }
 }

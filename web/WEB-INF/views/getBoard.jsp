@@ -1,4 +1,4 @@
-
+<%@page contentType="text/html; charset=UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -12,7 +12,7 @@
 		<a href="logout_proc">Log-out</a>
 		<hr>
 		<form action="updateBoard.do" method="post">
-			<input name="seq" type="hidden" value="${board.Seq}" />
+			<input name="seq" type="hidden" value="${board.seq}" />
 			<table border="1" cellpadding="0" cellspacing="0">
 				<tr>
 					<td bgcolor="orange" width="70">제목</td>
@@ -43,9 +43,9 @@
 			</table>
 		</form>
 		<hr>
-		<a href="insertBoard">글등록</a>&nbsp;&nbsp;&nbsp;
+		<a href="insertBoard.do">글등록</a>&nbsp;&nbsp;&nbsp;
 		<a href="deleteBoard.do?seq=${board.seq}">글삭제</a>&nbsp;&nbsp;&nbsp;
-		<a href="getBoardList.do">글목록</a>
+		<a href="getBoardList.do">글목록</a>&nbsp;&nbsp;&nbsp;
 	</div>
 </body>
 </html>
