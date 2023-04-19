@@ -4,6 +4,7 @@ package day4.controller;
 import day4.model.board.BoardVO;
 import day4.model.board.impl.BoardDAO;
 import day4.model.board.impl.BoardDAOSpring;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.Controller;
 
@@ -12,6 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
+@org.springframework.stereotype.Controller
+@RequestMapping("/getBoardList.do")
 public class GetBoardListController implements Controller {
     @Override
     public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) {

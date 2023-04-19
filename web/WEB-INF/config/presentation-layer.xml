@@ -5,28 +5,28 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
     <context:component-scan base-package="day4"/>
-        <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
-        <!--url controller mappings-->
-            <property name="mappings">
-                <props>
-                    <prop key="/login.do">login</prop>
-                    <prop key="/getBoardList.do">getBoardList</prop>
-                    <prop key="/getBoard.do">getBoard</prop>
-                    <prop key="/logout.do">logout</prop>
-                    <prop key="/deleteBoard.do">deleteBoard</prop>
-                    <prop key="/insertBoard.do">insertBoard</prop>
-                    <prop key="/updateBoard.do">updateBoard</prop>
-                </props>
-            </property>
-        </bean>
+<!--        <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">-->
+<!--        &lt;!&ndash;url controller mappings&ndash;&gt;-->
+<!--            <property name="mappings">-->
+<!--                <props>-->
+<!--                    <prop key="/login.do">login</prop>-->
+<!--                    <prop key="/getBoardList.do">getBoardList</prop>-->
+<!--                    <prop key="/getBoard.do">getBoard</prop>-->
+<!--                    <prop key="/logout.do">logout</prop>-->
+<!--                    <prop key="/deleteBoard.do">deleteBoard</prop>-->
+<!--                    <prop key="/insertBoard.do">insertBoard</prop>-->
+<!--                    <prop key="/updateBoard.do">updateBoard</prop>-->
+<!--                </props>-->
+<!--            </property>-->
+<!--        </bean>-->
 
-        <bean id="login" class="day4.controller.LoginController"/>
-        <bean id="getBoardList" class="day4.controller.GetBoardListController"/>
-        <bean id="getBoard" class="day4.controller.GetBoardController"/>
-        <bean id="logout" class="day4.controller.LogoutController"/>
-        <bean id="deleteBoard" class="day4.controller.DeleteBoardController"/>
-        <bean id="insertBoard" class="day4.controller.InsertBoardController"/>
-        <bean id="updateBoard" class="day4.controller.UpdateBoardController"/>
+<!--        <bean id="login" class="day4.controller.LoginController"/>-->
+<!--        <bean id="getBoardList" class="day4.controller.GetBoardListController"/>-->
+<!--        <bean id="getBoard" class="day4.controller.GetBoardController"/>-->
+<!--        <bean id="logout" class="day4.controller.LogoutController"/>-->
+<!--        <bean id="deleteBoard" class="day4.controller.DeleteBoardController"/>-->
+<!--        <bean id="insertBoard" class="day4.controller.InsertBoardController"/>-->
+<!--        <bean id="updateBoard" class="day4.controller.UpdateBoardController"/>-->
 
     <bean id="viewResolver"
           class="org.springframework.web.servlet.view.InternalResourceViewResolver">
