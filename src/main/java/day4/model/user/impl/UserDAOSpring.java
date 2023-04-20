@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public class UserDAOSpring {
@@ -24,7 +25,15 @@ public class UserDAOSpring {
     public UserVO getUser(UserVO vo){
         System.out.println("===> Spring JDBC로 getUser() 기능 처리");
         Object[] args = {vo.getId(),vo.getPassword()};
-        return jdbcTemplate.queryForObject(USER_GET, args,  new UserRowMapper());
+        Optional<UserVO> result = Optional.ofNullable(jdbcTemplate.queryForObject(USER_GET, args,  new UserRowMapper()));
+        if(result.isPresent()) {
+            return result.get();
+        } else {
+            // 예외 처리
+//            throw new RuntimeException("해당하는 사용자 정보가 없습니다.");
+            UserVO user  = null;
+            return user;
+        }
     }
 
     public List<UserVO> getUserList(){

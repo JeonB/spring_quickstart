@@ -2,17 +2,14 @@ package day4.controller;
 
 
 import day4.model.user.UserVO;
-import day4.model.user.impl.UserDAO;
 import day4.model.user.impl.UserDAOSpring;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.Mapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.Controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.Optional;
 
 @org.springframework.stereotype.Controller
 public class LoginController implements Controller {

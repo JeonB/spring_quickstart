@@ -12,7 +12,6 @@ import java.util.List;
 
 
 // DAO(Data Access Object)
-@Repository("userDAO")
 public class
 UserDAO {
 	private Connection conn = null;
