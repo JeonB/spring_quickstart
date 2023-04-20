@@ -30,8 +30,8 @@ public class LoginController implements Controller {
         vo.setId(id);
         vo.setPassword(password);
 
-        UserDAO userDAO = new UserDAO();
-        UserVO user = userDAO.getUser(vo);
+        UserDAOSpring userDAO = new UserDAOSpring();
+        UserVO user = userDAO.getUser(vo); //nullpointexception 발생
 
         // 3. 화면 네비게이션
         ModelAndView mav = new ModelAndView();
