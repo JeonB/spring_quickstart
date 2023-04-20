@@ -4,6 +4,9 @@ package day4.controller;
 import day4.model.board.BoardVO;
 import day4.model.board.impl.BoardDAO;
 import day4.model.board.impl.BoardDAOSpring;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.Mapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.Controller;
@@ -14,9 +17,10 @@ import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @org.springframework.stereotype.Controller
-@RequestMapping("/getBoardList.do")
+
 public class GetBoardListController implements Controller {
     @Override
+    @PostMapping("/getBoardList.do")
     public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) {
         System.out.println("글 목록 검색 처리");
         // 1. 사용자 입력 정보 추출(검색 기능은 나중에 구현)

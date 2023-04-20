@@ -4,6 +4,8 @@ package day4.controller;
 
 import day4.model.board.BoardVO;
 import day4.model.board.impl.BoardDAO;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.Controller;
 
@@ -11,8 +13,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+@org.springframework.stereotype.Controller
 public class GetBoardController implements Controller {
     @Override
+    @GetMapping("/getBoard.do")
+    @PostMapping("/getBoard.do")
     public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) {
         System.out.println("글 상세 조회 처리");
         // 1. 검색할 게시글 번호 추출

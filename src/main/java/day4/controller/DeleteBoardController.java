@@ -4,14 +4,19 @@ package day4.controller;
 import day4.model.board.BoardVO;
 import day4.model.board.impl.BoardDAO;
 import day4.model.board.impl.BoardDAOSpring;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.Controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+@org.springframework.stereotype.Controller
 public class DeleteBoardController implements Controller {
     @Override
+    @GetMapping("/deleteBoard.do")
+    @PostMapping("/deleteBoard.do")
     public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) {
         System.out.println("글 삭제 처리");
         // 1. 사용자 입력 정보 추출

@@ -23,11 +23,6 @@ public class UserDAOSpring {
 
     public UserVO getUser(UserVO vo){
         System.out.println("===> Spring JDBC로 getUser() 기능 처리");
-        if(vo == null){
-            vo = new UserVO();
-            vo.setId("test");
-            vo.setPassword("test");
-        }
         Object[] args = {vo.getId(),vo.getPassword()};
         return jdbcTemplate.queryForObject(USER_GET, args,  new UserRowMapper());
     }
