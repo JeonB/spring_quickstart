@@ -12,7 +12,7 @@ public class UserServiceClient {
         UserService userService = (UserService) container.getBean("userService");
 
         UserVO vo = new UserVO();
-        vo.setId("endeavor");
+        vo.setId("ende");
         vo.setPassword("12345");
         vo.setName("jeo");
         vo.setRole("roto1");

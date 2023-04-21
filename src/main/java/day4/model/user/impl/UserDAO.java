@@ -10,7 +10,6 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-
 // DAO(Data Access Object)
 public class
 UserDAO {

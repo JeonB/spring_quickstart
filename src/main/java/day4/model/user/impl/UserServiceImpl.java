@@ -10,6 +10,10 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
 	private UserDAOSpring userDAO;
 
+	public UserServiceImpl(UserDAOSpring userDAO) {
+		this.userDAO = userDAO;
+	}
+
 
 	public UserVO getUser(UserVO vo) {
 		return userDAO.getUser(vo);

@@ -6,6 +6,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
+import javax.sql.DataSource;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
@@ -24,16 +25,11 @@ public class UserDAOSpring {
 
     public UserVO getUser(UserVO vo){
         System.out.println("===> Spring JDBC로 getUser() 기능 처리");
-        Object[] args = {vo.getId(),vo.getPassword()};
-        Optional<UserVO> result = Optional.ofNullable(jdbcTemplate.queryForObject(USER_GET, args,  new UserRowMapper()));
-        if(result.isPresent()) {
-            return result.get();
-        } else {
-            // 예외 처리
-//            throw new RuntimeException("해당하는 사용자 정보가 없습니다.");
-            UserVO user  = null;
-            return user;
+        if (jdbcTemplate == null) {
+            throw new IllegalStateException("jdbcTemplate is null");
         }
+        Object[] args = {vo.getId(),vo.getPassword()};
+        return jdbcTemplate.queryForObject(USER_GET, args,  new UserRowMapper());
     }
 
     public List<UserVO> getUserList(){
