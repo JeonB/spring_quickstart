@@ -36,4 +36,7 @@
             즉, 1개 이상의 url 패턴을 서블릿 하나에 매핑 시킬 수 있다-->
     </servlet-mapping>
 
+    <welcome-file-list>
+        <welcome-file>/WEB-INF/views/index.jsp</welcome-file>
+    </welcome-file-list>
 </web-app>

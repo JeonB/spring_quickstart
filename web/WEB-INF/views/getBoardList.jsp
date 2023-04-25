@@ -13,7 +13,7 @@
 	<div align="center">
 		<h1>글 목록</h1>
 		<h3>
-			관리자님 환영합니다...<a href="logout.do">Log-out</a>
+			${userName}님 환영합니다...<a href="logout.do">Log-out</a>
 		</h3>
 		<!-- 검색 시작 -->
 		<form action="getBoardList.do" method="post">
@@ -41,7 +41,7 @@
 				<td>${board.seq}</td>
 				<td align="left"><a href="getBoard.do?seq=${board.seq}">
 						${board.title}</a></td>
-				<td>${board.writer}></td>
+				<td>${board.writer}</td>
 				<td>${board.regDate}</td>
 				<td>${board.cnt}</td>
 			</tr>

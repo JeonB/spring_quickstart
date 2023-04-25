@@ -8,9 +8,16 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Title test</title>
 </head>
 <body>
-    <h3>${data}</h3>
+    <div align="center">
+        <h1>게시판</h1>
+        <p>
+            <a href="/login.do">로그인</a> <br>
+            <a href="/getBoardList.do">글 목록 바로가기</a>
+        </p>
+
+    </div>
 </body>
 </html>
