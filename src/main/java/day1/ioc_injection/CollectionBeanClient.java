@@ -6,6 +6,7 @@ import org.springframework.context.support.GenericXmlApplicationContext;
 import java.util.List;
 
 public class CollectionBeanClient {
+
     public static void main(String[] args) {
         AbstractApplicationContext factory =
                 new GenericXmlApplicationContext("applicationContext_day1.xml");

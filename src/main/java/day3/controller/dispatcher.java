@@ -8,11 +8,15 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet("/dispatcher-servlet")
-public class dispatcher extends HttpServlet{
-@Override
-protected void doGet(HttpServletRequest req,HttpServletResponse res)throws ServletException,IOException{
-}
-@Override
-protected void doPost(HttpServletRequest req,HttpServletResponse res)throws ServletException,IOException{
- }
+public class dispatcher extends HttpServlet {
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse res)
+            throws ServletException, IOException {
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse res)
+            throws ServletException, IOException {
+    }
 }

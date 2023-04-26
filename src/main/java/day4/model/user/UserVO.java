@@ -5,10 +5,11 @@ import lombok.Data;
 @Data
 //VO(Value Object)
 public class UserVO {
-	private String id;
-	private String password;
-	private String name;
-	private String role;
+
+    private String id;
+    private String password;
+    private String name;
+    private String role;
 
 //	public String getId() {
 //		return id;

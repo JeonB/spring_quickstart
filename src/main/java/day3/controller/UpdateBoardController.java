@@ -6,7 +6,8 @@ import day3.view.board.impl.BoardDAO;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class UpdateBoardController implements Controller{
+public class UpdateBoardController implements Controller {
+
     @Override
     public String handleRequest(HttpServletRequest request, HttpServletResponse response) {
         System.out.println("글 수정 처리");

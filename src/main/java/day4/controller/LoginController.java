@@ -15,7 +15,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 @Controller
-public class LoginController{
+public class LoginController {
+
     @RequestMapping(value = "/login.do", method = RequestMethod.GET)
     public String loginView(UserVO vo) {
         System.out.println("로그인 화면 이동");
@@ -23,14 +24,16 @@ public class LoginController{
         vo.setPassword("1234");
         return "login";
     }
+
     @RequestMapping(value = "/login.do", method = RequestMethod.POST)
     public String login(UserVO vo, UserDAO userDAO, HttpSession session) {
         System.out.println("로그인 인증 처리");
         UserVO user = userDAO.getUser(vo);
-        if(user!=null){
-            session.setAttribute("userName",user.getName());
+        if (user != null) {
+            session.setAttribute("userName", user.getName());
             return "redirect:getBoardList.do";
+        } else {
+            return "login";
         }
-        else return "login";
     }
 }

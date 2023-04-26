@@ -1,6 +1,7 @@
 package day3.controller;
 
 public class ViewResolver {
+
     public String prefix;
     public String suffix;
 

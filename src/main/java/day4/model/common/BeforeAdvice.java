@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 public class BeforeAdvice {
 
     @Before("day4.model.common.PointcutCommon.allPointcut()")
-    public void beforeLog(JoinPoint jp){
+    public void beforeLog(JoinPoint jp) {
         String method = jp.getSignature().getName();
         Object[] args = jp.getArgs();
 

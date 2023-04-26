@@ -14,6 +14,7 @@ import java.util.Optional;
 
 @Repository
 public class UserDAOSpring {
+
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
@@ -23,26 +24,26 @@ public class UserDAOSpring {
     private final String USER_UPDATE = "UPDATE USERS SET PASSWORD=? WHERE ID=?";
     private final String USER_LIST = "select * from users order by id";
 
-    public UserVO getUser(UserVO vo){
+    public UserVO getUser(UserVO vo) {
         System.out.println("===> Spring JDBC로 getUser() 기능 처리");
         if (jdbcTemplate == null) {
             throw new IllegalStateException("jdbcTemplate is null");
         }
-        Object[] args = {vo.getId(),vo.getPassword()};
-        return jdbcTemplate.queryForObject(USER_GET, args,  new UserRowMapper());
+        Object[] args = {vo.getId(), vo.getPassword()};
+        return jdbcTemplate.queryForObject(USER_GET, args, new UserRowMapper());
     }
 
-    public List<UserVO> getUserList(){
+    public List<UserVO> getUserList() {
         System.out.println("===> Spring JDBC로 getUserList() 기능 처리");
         return jdbcTemplate.query(USER_LIST, new UserRowMapper());
     }
 
-    public void insertUser(UserVO vo){
+    public void insertUser(UserVO vo) {
         System.out.println("===> Spring JDBC로 insertUser() 기능 처리");
-        jdbcTemplate.update(USER_INSERT,vo.getId(), vo.getPassword(), vo.getName(),vo.getRole());
+        jdbcTemplate.update(USER_INSERT, vo.getId(), vo.getPassword(), vo.getName(), vo.getRole());
     }
 
-    public void updateUser(UserVO vo){
+    public void updateUser(UserVO vo) {
         System.out.println("===> Spring JDBC로 updateUser() 기능 처리");
         jdbcTemplate.update(USER_UPDATE, vo.getPassword(), vo.getId());
     }
@@ -55,6 +56,7 @@ public class UserDAOSpring {
 
 
 class UserRowMapper implements RowMapper<UserVO> {
+
     public UserVO mapRow(ResultSet rs, int rowNum) throws SQLException {
         UserVO user = new UserVO();
         user.setId(rs.getString("ID"));

@@ -15,24 +15,28 @@ import java.util.List;
 
 // 클라이언트의 요청을 가장 먼저 받아들이는 Front Controller.
 public class DispatcherServletCopy extends HttpServlet {
+
     private static final long serialVersionUID = 1L;
-    
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
         process(request, response);
     }
-    
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
-        process(request,response);
+        process(request, response);
     }
 
-    private void process(HttpServletRequest request, HttpServletResponse response) throws IOException{
-    // 1. 클라이언트의 요청 path 정보 추출
+    private void process(HttpServletRequest request, HttpServletResponse response)
+            throws IOException {
+        // 1. 클라이언트의 요청 path 정보 추출
         String uri = request.getRequestURI();
         String path = uri.substring(uri.lastIndexOf("/"));
         System.out.println(path);
-    // 2. 클라이언트의 요청 path에 따라 적절히 분기처리
-        if(path.equals("/login.do")){
+        // 2. 클라이언트의 요청 path에 따라 적절히 분기처리
+        if (path.equals("/login.do")) {
             System.out.println("로그인 처리");
             // 1. 사용자 입력 정보 추출
             String id = request.getParameter("id");
@@ -51,8 +55,7 @@ public class DispatcherServletCopy extends HttpServlet {
             } else {
                 response.sendRedirect("login");
             }
-        }
-        else if(path.equals("/logout.do")){
+        } else if (path.equals("/logout.do")) {
             System.out.println("로그아웃 처리");
             // 1. 브라우저와 연결된 세션 객체를 강제 종료한다.
             HttpSession session = request.getSession();
@@ -120,8 +123,8 @@ public class DispatcherServletCopy extends HttpServlet {
             BoardVO board = boardDAO.getBoard(vo);
 
             // 3. 검색 결과를 세션에 저장하고 상세 화면으로 이동
-            HttpSession session =request.getSession();
-            session.setAttribute("board",board);
+            HttpSession session = request.getSession();
+            session.setAttribute("board", board);
             response.sendRedirect("getBoard");
         } else if (path.equals("/getBoardList.do")) {
             System.out.println("글 목록 검색 처리");
@@ -133,7 +136,7 @@ public class DispatcherServletCopy extends HttpServlet {
             List<BoardVO> boardList = boardDAO.getBoardList(vo);
 
             // 3. 검색 결과를 세션에 저장하고 목록 화면으로 이동
-            HttpSession session =request.getSession();
+            HttpSession session = request.getSession();
             session.setAttribute("boardList", boardList);
             response.sendRedirect("getBoardList");
         }

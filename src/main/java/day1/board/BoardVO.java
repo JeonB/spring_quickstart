@@ -3,6 +3,7 @@ package day1.board;
 import java.sql.Date;
 
 public class BoardVO {
+
     private int seq;
     private String title;
     private String writer;

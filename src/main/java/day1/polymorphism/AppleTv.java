@@ -1,8 +1,10 @@
 package day1.polymorphism;
 
-public class AppleTv implements TV{
+public class AppleTv implements TV {
+
     private Speaker speaker;
-    public AppleTv(Speaker speaker){
+
+    public AppleTv(Speaker speaker) {
         System.out.println("애플티비 객체 생성");
         this.speaker = speaker;
     }

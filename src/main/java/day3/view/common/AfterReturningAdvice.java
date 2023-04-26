@@ -10,16 +10,15 @@ import org.springframework.stereotype.Service;
 @Aspect
 public class AfterReturningAdvice {
 
-    @AfterReturning(pointcut="day3.view.common.PointcutCommon.getPointcut()", returning="returnObj")
-    public void afterLog(JoinPoint jp, Object returnObj)
-    {
+    @AfterReturning(pointcut = "day3.view.common.PointcutCommon.getPointcut()", returning = "returnObj")
+    public void afterLog(JoinPoint jp, Object returnObj) {
         String method = jp.getSignature().getName();
-        if(returnObj instanceof UserVO){
+        if (returnObj instanceof UserVO) {
             UserVO user = (UserVO) returnObj;
-            if (user.getRole().equals("manager")){
+            if (user.getRole().equals("manager")) {
                 System.out.println(user.getName() + " 로그인(manager)");
             }
         }
-        System.out.println("[사후 처리]"+method + "() 메소드 리턴값 : " + returnObj.toString());
+        System.out.println("[사후 처리]" + method + "() 메소드 리턴값 : " + returnObj.toString());
     }
 }

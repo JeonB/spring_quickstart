@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class HomeController {
+
     @RequestMapping("/")
     public String index(Model model) {
         model.addAttribute("data", "Hello, Spring from IntelliJ! :)");
@@ -36,6 +37,7 @@ public class HomeController {
     public String deleteBoard_proc() {
         return "deleteBoard_proc";
     }
+
     @RequestMapping("/getBoard")
     public String getBoard() {
         return "getBoard";

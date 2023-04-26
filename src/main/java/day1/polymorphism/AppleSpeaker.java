@@ -1,10 +1,11 @@
 package day1.polymorphism;
 
-public class AppleSpeaker implements Speaker{
+public class AppleSpeaker implements Speaker {
 
-    public AppleSpeaker(){
+    public AppleSpeaker() {
         System.out.println("===> AppleSpeaker 객체 생성");
     }
+
     @Override
     public void volumeUp() {
         System.out.println("AppleSpeaker---소리 올린다.");

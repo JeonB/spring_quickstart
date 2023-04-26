@@ -7,7 +7,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-public class GetBoardController implements Controller{
+public class GetBoardController implements Controller {
+
     @Override
     public String handleRequest(HttpServletRequest request, HttpServletResponse response) {
         System.out.println("글 상세 조회 처리");
@@ -21,8 +22,8 @@ public class GetBoardController implements Controller{
         BoardVO board = boardDAO.getBoard(vo);
 
         // 3. 검색 결과를 세션에 저장하고 상세 화면으로 이동
-        HttpSession session =request.getSession();
-        session.setAttribute("board",board);
+        HttpSession session = request.getSession();
+        session.setAttribute("board", board);
         return "getBoard";
     }
 }

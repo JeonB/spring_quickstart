@@ -26,10 +26,9 @@ public class LoginController implements Controller {
         UserVO user = userDAO.getUser(vo);
 
         // 3. 화면 네비게이션
-        if(user != null){
+        if (user != null) {
             return "getBoardList.do";
-        }
-        else {
+        } else {
             return "login";
         }
     }

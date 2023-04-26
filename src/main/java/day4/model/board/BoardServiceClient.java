@@ -6,8 +6,10 @@ import org.springframework.context.support.GenericXmlApplicationContext;
 import java.util.List;
 
 public class BoardServiceClient {
+
     public static void main(String[] args) {
-        AbstractApplicationContext container = new GenericXmlApplicationContext("applicationContext_day4.xml");
+        AbstractApplicationContext container = new GenericXmlApplicationContext(
+                "applicationContext_day4.xml");
 
         BoardService boardService = (BoardService) container.getBean("boardService");
 
@@ -19,7 +21,7 @@ public class BoardServiceClient {
         boardService.insertBoard(vo);
 
         List<BoardVO> boardList = boardService.getBoardList(vo);
-        for(BoardVO board : boardList){
+        for (BoardVO board : boardList) {
             System.out.println("--> " + board.toString());
         }
 

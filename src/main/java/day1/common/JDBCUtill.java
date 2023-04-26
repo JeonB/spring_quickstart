@@ -8,11 +8,11 @@ import java.sql.SQLException;
 
 public class JDBCUtill {
 
-        public static String url = "jdbc:postgresql://localhost:5432/board";
-        public static String username = "jeon";
-        public static String password = "1234";
-    public static void main(String[] args) throws SQLException {
+    public static String url = "jdbc:postgresql://localhost:5432/board";
+    public static String username = "jeon";
+    public static String password = "1234";
 
+    public static void main(String[] args) throws SQLException {
 
         try (Connection conn = DriverManager.getConnection(url, username, password)) {
 

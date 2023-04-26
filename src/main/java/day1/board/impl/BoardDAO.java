@@ -10,7 +10,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 @Repository
-public class BoardDAO extends JDBCUtill{
+public class BoardDAO extends JDBCUtill {
+
     private Connection conn;
     private PreparedStatement pstmt; // 사전에 컴파일된 SQL문을 나타내는 객체(PreparedStatement는 인터페이스)
     private ResultSet rs; //쿼리문을 실행할 때 생성되는 데이터베이스 result set
