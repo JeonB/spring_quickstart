@@ -28,7 +28,7 @@
   <!--        <bean id="insertBoard" class="day4.controller.InsertBoardController"/>-->
   <!--        <bean id="updateBoard" class="day4.controller.UpdateBoardController"/>-->
   <context:component-scan base-package="day4"/>
-
+  <mvc:annotation-driven></mvc:annotation-driven>
   <context:property-placeholder location="classpath:database.properties"/>
 
   <bean id="viewResolver"

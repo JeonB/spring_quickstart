@@ -1,5 +1,6 @@
 package day4.model.board;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -20,4 +21,19 @@ public class BoardVO {
     private String searchCondition;
     private String searchKeyword;
     private MultipartFile uploadFile;
+    @JsonIgnore
+    public String getSearchCondition() {
+        return searchCondition;
+    }
+    @JsonIgnore
+    public String getSearchKeyword() {
+        return searchKeyword;
+    }
+    @JsonIgnore
+    public MultipartFile getUploadFile() {
+        return uploadFile;
+    }
+
+
+
 }

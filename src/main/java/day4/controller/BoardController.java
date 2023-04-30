@@ -6,6 +6,7 @@ import day4.model.board.impl.BoardDAO;
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,6 +14,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -26,6 +28,15 @@ public class BoardController {
     @RequestMapping("/")
     public String indexPage() {
         return "index";
+    }
+
+    @RequestMapping("/dataTransform.do")
+    @ResponseBody
+    public List<BoardVO> dataTransform(BoardVO vo){
+        vo.setSearchCondition("TITLE");
+        vo.setSearchKeyword("");
+        List<BoardVO> boardList = boardService.getBoardList(vo);
+        return boardList;
     }
     
     //BoardDAO 객체를 직접 참조하는 기존 코드 수정
