@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.sql.Date;
+import org.springframework.web.multipart.MultipartFile;
 
 //VO(Value Object)
 @Getter
@@ -18,4 +19,5 @@ public class BoardVO {
     private int cnt;
     private String searchCondition;
     private String searchKeyword;
+    private MultipartFile uploadFile;
 }
