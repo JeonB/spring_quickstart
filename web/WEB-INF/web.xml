@@ -18,7 +18,13 @@
     <filter-name>characterEncoding</filter-name>
     <url-pattern>*.do</url-pattern>
   </filter-mapping>
-
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>classpath:applicationContext_day4.xml</param-value>
+  </context-param>
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
   <!-- Spring을 Apache Tomcat 같은 Servlet Container 에서 동작하도록 하기 위한 것-->
   <servlet>
     <servlet-name>action</servlet-name>

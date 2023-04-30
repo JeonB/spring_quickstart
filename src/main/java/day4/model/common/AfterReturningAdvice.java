@@ -1,6 +1,6 @@
 package day4.model.common;
 
-import day2.user.UserVO;
+import day4.model.user.UserVO;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;

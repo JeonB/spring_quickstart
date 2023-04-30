@@ -10,7 +10,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-// DAO(Data Access Object)
+@Repository
 public class BoardDAO {
 
     private Connection conn = null;
