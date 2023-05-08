@@ -4,11 +4,11 @@
 "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-    <title>기본 에러 화면</title>
+    <title>산술표현 에러 화면</title>
 </head>
 <body bgcolor="#a52a2a" text="#d2691e">
 <table width="100%" border="1" cellspacing="0" cellpadding="0">
-    <tr><td align="center" bgcolor="#ffebcd"><b> 기본 에러 화면</b></td> </tr>
+    <tr><td align="center" bgcolor="#ffebcd"><b> 산술표현 에러 화면</b></td> </tr>
 </table>
 <br>
 
@@ -16,7 +16,7 @@
     <tr>
         <td align="center">
             <br><br><br><br>
-            Message: ${exception.message}
+            Message: 산술 관련 에러 발생!
             <br><br><br><br>
         </td>
     </tr>

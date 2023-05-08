@@ -5,11 +5,13 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.sql.Date;
+import lombok.ToString;
 import org.springframework.web.multipart.MultipartFile;
 
 //VO(Value Object)
 @Getter
 @Setter
+@ToString
 public class BoardVO {
 
     private int seq;
@@ -33,7 +35,5 @@ public class BoardVO {
     public MultipartFile getUploadFile() {
         return uploadFile;
     }
-
-
 
 }

@@ -40,20 +40,20 @@
 
 
   <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-    <property name="maxUploadSize" value="100000"/>
+    <property name="maxUploadSize" value="1000000"/>
   </bean>
 
   <bean id="exceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
     <property name="exceptionMappings">
       <props>
         <prop key="java.lang.ArithmeticException">
-            common/arithmeticError
+            error/arithmeticError
         </prop>
         <prop key="java.lang.NullPointerException">
-          common/nullPointerError
+          error/nullPointerError
         </prop>
       </props>
     </property>
-    <property name="defaultErrorView" value="common/error"/>
+    <property name="defaultErrorView" value="error/error"/>
   </bean>
 </beans>

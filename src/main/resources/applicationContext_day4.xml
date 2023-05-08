@@ -9,23 +9,23 @@
   <!--클래스들을 스캔하여 주석처리된 클래스들을 자동으로 객체 생성-->
   <context:component-scan base-package="day4"/>
 
-  <bean id="before" class="day3.view.common.BeforeAdvice"/>
-  <bean id="afterReturning" class="day3.view.common.AfterReturningAdvice"/>
-  <bean id="afterThrowing" class="day3.view.common.AfterThrowingAdvice"/>
-  <bean id="after" class="day3.view.common.AfterAdvice"/>
-  <aop:config>
-    <aop:pointcut id="allPointcut"
-      expression="execution(* day4..*Impl.*(..))"/>
-    <aop:pointcut id="getPointcut"
-      expression="execution(* day4..*Impl.get*(..))"/>
+<!--  <bean id="before" class="day3.view.common.BeforeAdvice"/>-->
+<!--  <bean id="afterReturning" class="day3.view.common.AfterReturningAdvice"/>-->
+<!--  <bean id="afterThrowing" class="day3.view.common.AfterThrowingAdvice"/>-->
+<!--  <bean id="after" class="day3.view.common.AfterAdvice"/>-->
+<!--  <aop:config>-->
+<!--    <aop:pointcut id="allPointcut"-->
+<!--      expression="execution(* day4..*Impl.*(..))"/>-->
+<!--    <aop:pointcut id="getPointcut"-->
+<!--      expression="execution(* day4..*Impl.get*(..))"/>-->
 
-    <aop:aspect ref="before">
-      <aop:before pointcut-ref="allPointcut" method="beforeLog"/>
-    </aop:aspect>
+<!--    <aop:aspect ref="before">-->
+<!--      <aop:before pointcut-ref="allPointcut" method="beforeLog"/>-->
+<!--    </aop:aspect>-->
 
-  </aop:config>
+<!--  </aop:config>-->
 
-  <aop:aspectj-autoproxy/>
+<!--  <aop:aspectj-autoproxy/>-->
 
   <context:property-placeholder location="classpath:config/database.properties"/>
   <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
