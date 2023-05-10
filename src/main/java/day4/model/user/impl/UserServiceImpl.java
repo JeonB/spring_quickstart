@@ -2,13 +2,14 @@ package day4.model.user.impl;
 
 import day4.model.user.UserService;
 import day4.model.user.UserVO;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service("userService")
 public class UserServiceImpl implements UserService {
-
+    @Autowired
     private UserDAOSpring userDAO;
 
     public UserServiceImpl(UserDAOSpring userDAO) {

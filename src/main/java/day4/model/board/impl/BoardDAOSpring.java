@@ -14,7 +14,7 @@ import java.util.List;
 public class BoardDAOSpring {
 
     @Autowired
-    private JdbcTemplate jdbcTemplate;
+    public JdbcTemplate jdbcTemplate;
 
     private final String BOARD_INSERT = "insert into board(seq,title,writer, content) " +
             "values((select nvl(max(seq),0)+1 from board),?,?,?)"; //(select nvl(max(seq),0)+1 from board)
