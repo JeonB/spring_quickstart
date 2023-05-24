@@ -17,11 +17,11 @@ UserDAO {
     private Connection conn = null;
     private PreparedStatement stmt = null;
     private ResultSet rs = null;
-    private final String USER_GET = "select * from users where id=? and password=?";
-    private final String USER_INSERT = "insert into users(id,password,name,role) values(?,?,?,?)";
-    private final String USER_DELETE = "DELETE USERS WHERE ID=?";
-    private final String USER_UPDATE = "UPDATE USERS SET PASSWORD=? WHERE ID=?";
-    private final String USER_LIST = "select * from users order by id";
+    private final String USER_GET = "select * from member where id=? and password=?";
+    private final String USER_INSERT = "insert into member(id,password,name,role) values(?,?,?,?)";
+    private final String USER_DELETE = "DELETE member WHERE ID=?";
+    private final String USER_UPDATE = "UPDATE member SET PASSWORD=? WHERE ID=?";
+    private final String USER_LIST = "select * from member order by id";
 
     public UserVO getUser(UserVO vo) {
         UserVO user = null;

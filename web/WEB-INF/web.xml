@@ -6,7 +6,7 @@
   
   <context-param>
     <param-name>contextConfigLocation</param-name>
-    <param-value>classpath:applicationContext_day4.xml</param-value>
+    <param-value>WEB-INF/spring/presentation-layer.xml</param-value>
   </context-param>
   
   <listener>
@@ -18,15 +18,14 @@
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
     <init-param>
       <param-name>contextConfigLocation</param-name>
-      <param-value>WEB-INF/config/presentation-layer.xml</param-value>
+      <param-value>WEB-INF/spring/config/servlet-context.xml</param-value>
     </init-param>
+    <load-on-startup>1</load-on-startup>
   </servlet>
 
   <servlet-mapping>
     <servlet-name>action</servlet-name>
-    <url-pattern>*.do</url-pattern>
-    <!-- do 로 끝나는 url은 action 이라는 이름의 디스패쳐 서블릿으로 보내겠다는 뜻.
-        즉, 1개 이상의 url 패턴을 서블릿 하나에 매핑 시킬 수 있다-->
+    <url-pattern>/</url-pattern>
   </servlet-mapping>
 
   <welcome-file-list>

@@ -18,7 +18,8 @@ import javax.servlet.http.HttpSession;
 
 @Controller
 public class LoginController {
-
+    @Autowired
+    UserServiceImpl userService;
     @RequestMapping(value = "/login.do", method = RequestMethod.GET)
     public String loginView(UserVO vo) {
         System.out.println("로그인 화면 이동");
@@ -28,7 +29,7 @@ public class LoginController {
     }
 
     @RequestMapping(value = "/login.do", method = RequestMethod.POST)
-    public String login(UserVO vo, @Autowired UserServiceImpl userService, HttpSession session) {
+    public String login(UserVO vo, HttpSession session) {
         System.out.println("로그인 인증 처리");
 
         if(vo.getId() == null || vo.getId().equals("")){
