@@ -10,7 +10,6 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-@Repository
 public class BoardDAO {
 
     private Connection conn = null;
