@@ -88,7 +88,7 @@ public class BoardController {
         return "getBoard";
     }
 
-    //검색 조건 목록 설정, @RequestParam대신 사용
+    //검색 조건 목록 설정, @RequestParam대신 사용 model.addAttribute("conditionMap","conditionMap")과 동일?
     @ModelAttribute("conditonMap")
     public Map<String,String> searchConditionMap(){
         Map<String, String> conditionMap = new HashMap<>();
