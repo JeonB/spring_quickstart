@@ -52,11 +52,13 @@ public class BoardController {
             String fileName = uploadFile.getOriginalFilename();
             uploadFile.transferTo(new File("C:/Users/jeon/Desktop" + fileName));
         }
-        boardService.insertBoard(vo);
+
         if(vo.getWriter() == null)
             return "insertBoard";
-        else
+        else{
+            boardService.insertBoard(vo);
             return "redirect:getBoardList.do";
+        }
     }
 
     @RequestMapping("/updateBoard.do")
